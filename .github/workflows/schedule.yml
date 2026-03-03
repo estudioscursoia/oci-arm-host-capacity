@@ -33,7 +33,7 @@ jobs:
           echo "OCI_MEMORY_IN_GBS=${{ secrets.OCI_MEMORY_IN_GBS }}" >> .env
           echo "OCI_SHAPE=${{ secrets.OCI_SHAPE }}" >> .env
           echo "OCI_DISPLAY_NAME=ubuntu-ampere" >> .env
-          echo "OCI_SSH_PUBLIC_KEY=${{ secrets.OCI_SSH_PUBLIC_KEY }}" >> .env
+          echo 'OCI_SSH_PUBLIC_KEY=${{ secrets.OCI_SSH_PUBLIC_KEY }}' >> .env
 
       - name: Create private key file
         run: echo "${{ secrets.OCI_PRIVATE_KEY }}" > oci_api_key.pem
